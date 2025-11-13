@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trober</title>
+  <link rel="icon" href="./images/icon.png" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: radial-gradient(circle at 20% 30%, #0f0c29, #1b1b28, #24243a);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      padding: 30px 60px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    main {
+      text-align: center;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 5rem;
+      text-shadow: 0 0 20px rgba(255,255,255,0.2);
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-shadow: 0 0 20px rgba(255,255,255,0.2);
+      margin-bottom: 50px;
+    }
+
+    button {
+      font-size: 1.8rem;
+      padding: 20px 80px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #002834, #002c61);
+      color: white;
+      font-weight: bold;
+      letter-spacing: 2px;
+      transition: 0.3s;
+      box-shadow: 0 0 20px rgba(0, 84, 186, 0.6);
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgb(0, 92, 205);
+    }
+
+    /* Animated background details */
+    .dot {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      animation: move 20s linear infinite;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      object-fit: contain;
+    }
+
+    @keyframes move {
+      0% { transform: translateY(0) translateX(0); opacity: 1; }
+      100% { transform: translateY(100vh) translateX(50vw); opacity: 0; }
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+    <img src="./images/icon.png" alt="Logo" class="logo-img">
+    TROBER
+    </div>
+  </header>
+
+  <main>
+    <h1>SCAN YOUR WALLET</h1>
+    <h2>Check your wallet for possible airdrops and view general statistics</h2>
+    <button id="scanBtn" class="connect-wallet">SCAN</button>
+  </main>
+
+  <footer>
+    © 2025 Trober — Web3 Tools
+  </footer>
+
+  <script>
+    // create moving dots for background detail
+    for (let i = 0; i < 80; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      dot.style.left = Math.random() * 100 + 'vw';
+      dot.style.top = Math.random() * 100 + 'vh';
+      dot.style.animationDuration = 10 + Math.random() * 20 + 's';
+      dot.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(dot);
+    }
+  </script>
+
+<a href="https://x.com/0xTrober" target="_blank" class="x-icon">
+  <img src="/images/xicon.png" alt="X" />
+</a>
+
+<style>
+  .x-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    z-index: 1000;
+  }
+
+  .x-icon:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+  }
+
+  .x-icon img {
+    width: 80px;
+    height: 80px;
+  }
+</style>
+<script src="./main.js"></script>
+</body>
+</html>
